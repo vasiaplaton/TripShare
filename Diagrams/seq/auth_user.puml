@@ -1,0 +1,267 @@
+@startuml
+actor "Пассажир" as passenger
+participant "Приложение" as app
+participant "Сервер" as server
+database "База данных" as db
+
+== Фильтровать поездки ==
+passenger -> app: Отфильтровать поездки
+activate app
+app -> server: Запрос на фильтрацию поездок
+activate server
+server --> db: Запрос к базе данных
+activate db
+db --> server: Отфильтрованный список поездок
+deactivate db
+server --> app: Отфильтрованный список поездок
+deactivate server
+app --> passenger: Отображение отфильтрованных поездок
+deactivate app
+
+== Посмотреть список подходящих поездок ==
+passenger -> app: Посмотреть список подходящих поездок
+activate app
+app -> server: Запрос на список подходящих поездок
+activate server
+server --> db: Запрос к базе данных
+activate db
+db --> server: Список подходящих поездок
+deactivate db
+server --> app: Список подходящих поездок
+deactivate server
+app --> passenger: Отображение списка подходящих поездок
+deactivate app
+
+== Посмотреть детали поездки ==
+passenger -> app: Посмотреть детали поездки
+activate app
+app -> server: Запрос на детали поездки
+activate server
+server --> db: Запрос к базе данных
+activate db
+db --> server: Детали поездки
+deactivate db
+server --> app: Детали поездки
+deactivate server
+app --> passenger: Отображение деталей поездки
+deactivate app
+
+== Нажать на кнопку "Забронировать" ==
+passenger -> app: Нажать на кнопку "Забронировать"
+activate app
+app -> server: Запрос на бронирование поездки
+activate server
+server --> app: Переход на страницу авторизации
+deactivate server
+app --> passenger: Переход на страницу авторизации
+deactivate app
+
+== Переход на страницу профиля ==
+passenger -> app: Нажать на кнопку "Профиль"
+activate app
+app -> server: Запрос на данные профиля
+activate server
+server --> db: Запрос к базе данных
+activate db
+db --> server: Данные профиля
+deactivate db
+server --> app: Данные профиля
+deactivate server
+app --> passenger: Отображение страницы профиля
+deactivate app
+
+== Переход на страницу редактирования профиля ==
+passenger -> app: Нажать на кнопку "Редактировать информацию о себе"
+activate app
+app --> passenger: Переход на страницу редактирования профиля
+passenger -> app: Подтвердить новые данные
+app -> server: новые данные
+activate server
+server -> db: новые данные
+activate db
+deactivate db
+db --> server: результат
+
+break данные не корректны
+server --> app: место где данные не верны
+app --> passenger: место где данные не верны
+end
+server --> app: Подтверждение отправки
+deactivate server
+app --> passenger: Подтверждение отправки
+deactivate app
+
+== Переход на страницу редактирования предпочтений ==
+passenger -> app: Нажать на кнопку "Редактировать мои предпочтения"
+activate app
+app --> passenger: Переход на страницу редактирования предпочтений
+passenger --> app: новые предпочтения
+app -> server: новые предпочтения
+activate server
+server -> db: новые предпочтения
+activate db
+deactivate db
+db --> server: результат
+break данные не корректны
+server --> app: место где предпочтения не верны
+app --> passenger: место где предпочтения не верны
+end
+server --> app: Подтверждение отправки
+deactivate server
+app --> passenger: Подтверждение отправки
+deactivate app
+
+== Переход на страницу добавления авто ==
+passenger -> app: Нажать на кнопку "Добавить авто"
+activate app
+app --> passenger: Переход на страницу "Добавить авто"
+passenger --> app: новое авто
+app -> server: новое авто
+activate server
+server -> db: новое авто
+activate db
+deactivate db
+db --> server: результат
+
+break данные не корректны
+server --> app: место где предпочтения не верны
+app --> passenger: место где предпочтения не верны
+end
+server --> app: Подтверждение отправки
+deactivate server
+app --> passenger: Подтверждение отправки
+deactivate app
+
+== Оценка участников поездки ==
+passenger -> app: Оценить участников поездки
+activate app
+app --> server: Отправить оценку и отзыв
+activate server
+server --> app: Подтверждение отправки
+deactivate server
+app --> passenger: Подтверждение отправки
+deactivate app
+server -> db: новый отзыв
+activate db
+deactivate db
+db --> server: результат
+
+break данные не корректны
+server --> app: место где отзыв не верен
+app --> passenger: место где отзыв не верен
+end
+server --> app: Подтверждение отправки
+deactivate server
+app --> passenger: Подтверждение отправки оценки и отзыва
+deactivate app
+
+== Запрос сообщений ==
+passenger -> app: Просмотреть чат
+activate app
+app -> server: Запрос сообщений
+activate server
+server -> db: Запрос сообщений из базы данных
+activate db
+db --> server: Сообщения из базы данных
+deactivate db
+server --> app: Сообщения
+deactivate server
+app --> passenger: Отображение сообщений
+deactivate app
+
+== Отправка нового сообщения ==
+passenger -> app: Отправить сообщение
+activate app
+app -> server: Отправка нового сообщения
+activate server
+server -> db: Сохранение сообщения в базу данных
+activate db
+db --> server: Сообщение сохранено
+deactivate db
+server --> app: Подтверждение отправки
+deactivate server
+app --> passenger: Уведомление об успешной отправке
+deactivate app
+
+== Переход на страницу с запланированными поездками ==
+passenger -> app: Переход на страницу с запланированными поездками
+activate app
+app -> server: Запрос на страницу с запланированными поездками
+activate server
+server -> db: Запрос данных
+activate db
+db --> server: запланированные поездки
+deactivate db
+server --> app: запланированными поездки
+deactivate server
+app --> passenger: запланированными поездки
+deactivate app
+
+== Отправка запроса ==
+passenger -> app: Отправить запрос
+activate app
+app -> server: Отправка нового запрос
+activate server
+server -> db: Сохранение запрос в базу данных
+activate db
+db --> server: Запрос сохранен
+deactivate db
+server --> app: Подтверждение отправки
+deactivate server
+app --> passenger: Уведомление об успешной отправке
+deactivate app
+
+== Создание поездки ==
+passenger -> app: Нажать на кнопку "Создать поездку"
+app -> server: Запрос на создание поездки
+activate server
+server -> db: Сохранение информации о поездке в базе данных
+activate db
+db --> server: Информация о поездке сохранена
+deactivate db
+server --> app: Подтверждение создания поездки
+deactivate server
+app --> passenger: Переход на страницу с запланированными поездками
+deactivate app
+
+== Подтверждение удаления аккаунта ==
+passenger -> app: Удаление аккаунта
+app -> server: Запрос на удаление аккаунта
+activate server
+server -> db: Удаление аккаунта из базы данных
+activate db
+db --> server: Аккаунт успешно удален
+deactivate db
+server --> app: Подтверждение удаления аккаунта
+deactivate server
+app --x passenger: Уведомление об успешном удалении аккаунта
+deactivate user
+
+== Запрос на ввод информации о способе оплаты ==
+passenger -> app: Ввести информацию о способе оплаты
+app -> server: Отправить информацию о способе оплаты
+activate server
+server -> db: Сохранение информации о способе оплаты
+activate db
+db --> server: Информация о способе оплаты сохранена
+deactivate db
+server --> app: Подтверждение сохранения способа оплаты
+deactivate server
+app -> passenger: Уведомление об успешном добавлении способа оплаты
+deactivate app
+
+== Удаление способа оплаты ==
+user -> passenger: Нажать на кнопку "Удалить способ оплаты"
+activate app
+app -> server: Запрос на удаление способа оплаты
+activate server
+server -> db: Удаление информации о способе оплаты
+activate db
+db --> server: Способ оплаты удален
+deactivate db
+server --> app: Подтверждение удаления способа оплаты
+deactivate server
+passenger -> user: Уведомление об успешном удалении способа оплаты
+deactivate app
+
+@enduml

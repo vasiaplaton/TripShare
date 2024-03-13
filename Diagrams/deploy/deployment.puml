@@ -1,0 +1,30 @@
+@startuml
+'https://plantuml.com/component-diagram
+
+
+node "База данных" {
+    [PostgreSQL]
+}
+
+
+node "Веб сервер" {
+    [FastAPI]
+}
+
+"База данных" -do- "Веб сервер": sqlalchemy
+
+
+node "Android устройство" {
+    [Kotlin\nприложение]
+}
+
+node "Desktop устройство" {
+    [JS\nприложение]
+}
+
+
+"Веб сервер" -down- "Android устройство": REST HTTPS
+"Веб сервер" -down- "Desktop устройство": REST HTTPS
+
+
+@enduml

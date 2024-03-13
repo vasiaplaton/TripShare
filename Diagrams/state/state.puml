@@ -1,0 +1,34 @@
+@startuml
+'https://plantuml.com/state-diagram
+
+scale 350 width
+skinparam maxMessageSize 100
+
+state cho <<choice>>
+state choice <<choice>>
+
+state fork_state <<fork>>
+state exit_state <<fork>>
+
+[*] -right-> неавторизованый: первый запуск
+[*] -down-> cho: запуск с данными аутенфикации
+
+неавторизованый --> cho: вход или регистрация
+cho -down-> fork_state: авторизация
+cho --> неавторизованый: провал аутенфикации
+
+fork_state --> пользователь: авторизация как обыный пользователь
+пользователь --> заблокированный: пользователь был заблокирован
+пользователь --> choice: выход или смена пароля
+заблокированный --> exit_state
+
+fork_state --> админ: авторизация как админ
+админ --> choice: админ сменил пароль
+
+choice --> неавторизованый:выход или смена пароля
+пользователь ----> exit_state
+админ --->  exit_state
+exit_state --> [*]
+
+
+@enduml

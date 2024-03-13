@@ -1,0 +1,156 @@
+@startuml
+actor "Администратор" as admin
+participant "Приложение" as app
+participant "Сервер" as server
+database "База данных" as db
+
+== Нажать на кнопку "Авторизация" ==
+admin -> app: Авторизоваться
+activate app
+app -> server: Отправка введенных данных
+activate server
+server -> db: запрос пользователя
+activate db
+db --> server: пользователь
+deactivate db
+server -> server: Проверка валидности
+
+break "Некорректные данные"
+    server --> app: Отправить ошибку о невалидных данных
+    app --> admin: Показать ошибку
+end
+
+server --> app: Успешная авторизация
+deactivate server
+app --> admin: Выполнен вход в аккаунт
+deactivate app
+
+== Просмотр жалоб ==
+admin -> app: Просмотреть жалобы
+activate app
+app -> server: Запрос на получение жалоб
+activate server
+server -> db: Получить жалобы из базы данных
+activate db
+db --> server: Жалобы получены
+deactivate db
+server --> app: Отправить жалобы
+deactivate server
+app --> admin: Отображение жалоб
+deactivate app
+
+== Просмотр сообщений ==
+admin -> app: Просмотреть сообщения
+activate app
+app -> server: Запрос на получение сообщений
+activate server
+server -> db: Получить сообщения из базы данных
+activate db
+db --> server: Сообщения получены
+deactivate db
+server --> app: Отправить сообщения
+deactivate server
+app --> admin: Отображение сообщений
+deactivate app
+
+== Просмотр поездок ==
+admin -> app: Просмотреть поездки
+activate app
+app -> server: Запрос на получение списка поездок
+activate server
+server -> db: Получить список поездок из базы данных
+activate db
+db --> server: Список поездок получен
+deactivate db
+server --> app: Отправить список поездок
+deactivate server
+app --> admin: Отображение списка поездок
+deactivate app
+
+== Просмотр отзывов ==
+admin -> app: Просмотреть отзывы
+activate app
+app -> server: Запрос на получение отзывов
+activate server
+server -> db: Получить отзывы из базы данных
+activate db
+db --> server: Отзывы получены
+deactivate db
+server --> app: Отправить отзывы
+deactivate server
+app --> admin: Отображение отзывов
+deactivate app
+
+== Удаление сообщения ==
+admin -> app: Удалить сообщение
+activate app
+app -> server: Запрос на удаление сообщения
+activate server
+server -> db: Удаление сообщения из базы данных
+activate db
+db --> server: Сообщение удалено
+deactivate db
+server --> app: Подтверждение удаления сообщения
+deactivate server
+app --> admin: Уведомление об успешном удалении сообщения
+deactivate app
+
+== Удаление поездки ==
+admin -> app: Удалить поездку
+activate app
+app -> server: Запрос на удаление поездки
+activate server
+server -> db: Удаление поездки из базы данных
+activate db
+db --> server: Поездка удалена
+deactivate db
+server --> app: Подтверждение удаления поездки
+deactivate server
+app --> admin: Уведомление об успешном удалении поездки
+deactivate app
+
+== Удаление отзыва ==
+admin -> app: Удалить отзыв
+activate app
+app -> server: Запрос на удаление отзыва
+activate server
+server -> db: Удаление отзыва из базы данных
+activate db
+db --> server: Отзыв удален
+deactivate db
+server --> app: Подтверждение удаления отзыва
+deactivate server
+app --> admin: Уведомление об успешном удалении отзыва
+
+deactivate app
+
+== Просмотр пользователей ==
+admin -> app: Просмотреть пользователей
+activate app
+app -> server: Запрос на получение списка пользователей
+activate server
+server -> db: Получить список пользователей из базы данных
+activate db
+db --> server: Список пользователей получен
+deactivate db
+server --> app: Отправить список пользователей
+deactivate server
+app --> admin: Отображение списка пользователей
+deactivate app
+
+== Удаление пользователя ==
+admin -> app: Удалить пользователя
+activate app
+app -> server: Запрос на удаление пользователя
+activate server
+server -> db: Удаление пользователя из базы данных
+activate db
+db --> server: Пользователь удален
+deactivate db
+server --> app: Подтверждение удаления пользователя
+deactivate server
+app --> admin: Уведомление об успешном удалении пользователя
+deactivate app
+
+
+@enduml

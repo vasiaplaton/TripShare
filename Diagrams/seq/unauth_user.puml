@@ -1,0 +1,95 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+actor Неавторизованный as user
+participant Клиент as client
+participant Сервер as server
+database PostgressDB as db
+
+== Нажать на кнопку "отобразить поездки" ==
+user -> client: отобразить поездки
+activate client
+client -> server: получить такие поездки
+activate server
+server -> db: получить такие поездки
+activate db
+db --> server: список поездок
+deactivate db
+server --> client: список поездок
+deactivate server
+client --> user: список поездок
+deactivate client
+
+user -> client: применить фильтры
+activate client
+client -> server: получить такие поездки
+activate server
+server -> db: получить такие поездки
+activate db
+db --> server: список поездок
+deactivate db
+server --> client: список поездок
+deactivate server
+client --> user: список поездок
+deactivate client
+
+== Нажать на кнопку "Забронировать" ==
+user -> client: Нажать на кнопку "Забронировать"
+activate client
+client -> server: Запрос на бронирование поездки
+activate server
+server --> client: Переход на страницу авторизации
+deactivate server
+client --> user: Переход на страницу авторизации
+deactivate client
+
+== Нажать на кнопку "Авторизация" ==
+user -> client: Авторизоваться
+activate client
+client -> server: Отправка введенных данных
+activate server
+server -> db: запрос пользователя
+activate db
+db --> server: пользователь
+deactivate db
+server -> server: Проверка валидности
+
+break "Некорректные данные"
+    server --> client: Отправить ошибку о невалидных данных
+    client --> user: Показать ошибку
+end
+
+server --> client: Успешная авторизация
+deactivate server
+client --> user: Выполнен вход в аккаунт
+deactivate client
+
+
+user -> client: Зарегистрироваться
+activate client
+client -> server: Отправка введенных данных
+activate server
+server -> db: запрос пользователя
+activate db
+db --> server: пользователь
+deactivate db
+server -> server: Проверка валидности
+
+break "Некорректные данные"
+    server --> client: Отправить ошибку о невалидных данных
+    client --> user: Показать ошибку
+end
+server -> db: Проверить существование такого пользователя
+activate db
+db --> server: Результат проверки
+deactivate db
+break "Пользователь уже существует"
+    server --> client: Отправить ошибку о существовании такого пользователя
+    client --> user: Показать ошибку
+end
+server --> client: Успешная регистрация
+deactivate server
+client --> user: Успешная регистрация
+deactivate client
+
+@enduml

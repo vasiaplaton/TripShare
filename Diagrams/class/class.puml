@@ -1,0 +1,139 @@
+@startuml
+class User {
+  - id: int
+  --
+  - phone: str
+  - password_hash: str
+
+  - name: str
+  - rating: double
+  - favorite_genres: list[str]
+
+  - talkativeness: int 0-10
+  - attitude towards smoking: int 0-10
+  - attitude towards animals during the trip: int 0-10
+
+  - avatar: path to file
+  __
+
+}
+
+class Trip {
+  - id: int
+  --
+  - departure_place: geo
+  - departure_datetime: datetime
+  - arrival_place: geo
+  - arrival_datetime: datetime
+  - max_passengers
+
+  - cost: int
+  - stops: list[?]
+
+  - max two passengers in the back seat: bool
+  - smoking_allowed: bool
+  - e-cigarettes_allowed: bool
+  - pets_allowed: bool
+  - free_trunk: bool
+  __
+  - car_id
+  - driver_id
+}
+
+class Car {
+  - id: int
+  --
+  - brand: str
+  - model: str
+  - color: rgb
+  - year_of_manufacture: int
+  - photo: list[path]
+  __
+  - user_id: int
+}
+
+class Request {
+  - id: int
+  --
+  - request_datetime: datetime
+  - status: enum[Created, Accepted, Declined, Finished]
+  - status_change_datetime: datetime
+  - cost: int
+  - number_of_seats: int
+
+  - departure: geo
+  - arrival: geo
+  __
+  - trip_id: int
+  - user_id: int
+}
+
+User ||..o{ Car
+Trip ||..|| Car
+Trip ||..|| User
+Trip ||..o{ Request
+User ||..o{ Request
+
+
+class Chat {
+  - id
+  --
+  __
+ - user_id_1
+ - user_id_2
+}
+
+class ChatMessage {
+  - id
+  --
+  text: str
+  img: path
+  __
+  - sender_id
+  - chat_id
+}
+
+User ||..o{ Chat
+ChatMessage ||..|| User
+ChatMessage ||..|| User
+
+class Review {
+ - id <<PK>>
+ --
+ text: str
+ rating: int
+ __
+ - writer_id: int
+ - user_id: int
+}
+
+Review ||..|| User
+Review ||..|| User
+
+class Payment {
+  - id: int
+  - amount: int
+  --
+  - amount: int
+  - status: enum [CREATED, OK, RETURNED]
+  __
+  - payment_id: int
+  - request_id: int
+  - user_id: int
+}
+
+Payment ||..|| User
+Payment ||..|| Request
+
+
+class PaymentMethod {
+  - id: int
+  --
+  - data_json: str[json]
+  __
+  - user_id
+}
+
+User ||..o{ PaymentMethod
+
+@enduml
