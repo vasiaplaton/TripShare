@@ -16,4 +16,4 @@
 
 ### Презентация проекта
  * [Презентация](https://github.com/vasiaplaton/TripShare/blob/main/Presentation/Main.pdf)
- * [Видео](https://www.youtube.com/watch?v=He3Q81p31Ig)
+ * [Видео](https://youtu.be/IuMxdXlnphY)
