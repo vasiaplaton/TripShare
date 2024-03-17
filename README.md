@@ -15,5 +15,5 @@
  * Сопроводительное письмо [Docx](https://github.com/vasiaplaton/TripShare/blob/main/Documentation/Letter.docx) [Pdf](https://github.com/vasiaplaton/TripShare/blob/main/Documentation/Letter.pdf)
 
 ### Презентация проекта
- * [Презентация](https://github.com/vasiaplaton/TripShare/blob/main/Presentation/Main.pdf)
+ * [Презентация](https://github.com/vasiaplaton/TripShare/blob/main/Presentation/Presentation.pdf)
  * [Видео](https://www.youtube.com/watch?v=IuMxdXlnphY)
