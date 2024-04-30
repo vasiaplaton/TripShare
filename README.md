@@ -17,3 +17,4 @@
 ### Презентация проекта
  * [Презентация](https://github.com/vasiaplaton/TripShare/blob/main/Presentation/Presentation.pdf)
  * [Видео](https://www.youtube.com/watch?v=IuMxdXlnphY)
+ * [Видеопрезентация ко 2 аттестации](https://drive.google.com/file/d/1DA2Q2GM9w3apkwfgrMkE_NA7CSiLwzlK/view?usp=sharing)
