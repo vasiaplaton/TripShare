@@ -1,3 +1,6 @@
 [submodule "TripShareBackend"]
 	path = TripShareBackend
 	url = https://github.com/vasiaplaton/TripShareBackend
+[submodule "TripShare_Mobile"]
+	path = TripShare_Mobile
+	url = https://github.com/eg0r4444ik/TripShare_Mobile
