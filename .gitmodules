@@ -1,0 +1,3 @@
+[submodule "TripShareBackend"]
+	path = TripShareBackend
+	url = https://github.com/vasiaplaton/TripShareBackend
