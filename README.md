@@ -19,3 +19,6 @@
  * [Видео](https://www.youtube.com/watch?v=IuMxdXlnphY)
  * [Видеопрезентация ко 2 аттестации](https://drive.google.com/file/d/1DA2Q2GM9w3apkwfgrMkE_NA7CSiLwzlK/view?usp=sharing)
  * [Демонстрация работы приложения](https://youtu.be/j7KzPfaEAOs)
+
+## Видео о структуре
+ * [Бэкенд](https://youtu.be/1VoH4M3xit4)
