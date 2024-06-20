@@ -21,6 +21,9 @@
  * [Видеопрезентация ко 2 аттестации](https://drive.google.com/file/d/1DA2Q2GM9w3apkwfgrMkE_NA7CSiLwzlK/view?usp=sharing)
  * [Демонстрация работы приложения](https://youtu.be/j7KzPfaEAOs)
 
+## APK
+[APK](https://github.com/vasiaplaton/TripShare/blob/main/TripShare.apk)
+
 ## Видео о структуре
  * [Бэкенд](https://youtu.be/1VoH4M3xit4)
  * [Фронтенд]([https://youtu.be/1VoH4M3xit4](https://www.youtube.com/watch?v=HiGrKUflbYI))
