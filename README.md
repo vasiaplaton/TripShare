@@ -14,7 +14,7 @@
  * Техническое задание [Docx](https://github.com/vasiaplaton/TripShare/blob/main/Documentation/Tekhnicheskoe_Zadanie_TripShare.docx) [Pdf](https://github.com/vasiaplaton/TripShare/blob/main/Documentation/Tekhnicheskoe_Zadanie_TripShare.pdf)
  * Сопроводительное письмо [Docx](https://github.com/vasiaplaton/TripShare/blob/main/Documentation/Letter.docx) [Pdf](https://github.com/vasiaplaton/TripShare/blob/main/Documentation/Letter.pdf)
  * Курсовая [Docx](https://github.com/vasiaplaton/TripShare/blob/main/Documentation/New2/Kursovaya_rabota_final.docx) [Pdf](https://github.com/vasiaplaton/TripShare/blob/main/Documentation/New2/Kursovaya_rabota_final.pdf)
-
+ * Swagger [swagger](http://193.222.62.211:8000/docs)
 ### Презентация проекта
  * [Презентация](https://github.com/vasiaplaton/TripShare/blob/main/Presentation/Presentation.pdf)
  * [Видео к 1 аттестации](https://www.youtube.com/watch?v=IuMxdXlnphY)
