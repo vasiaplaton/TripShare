@@ -20,6 +20,7 @@
  * [Видео к 1 аттестации](https://www.youtube.com/watch?v=IuMxdXlnphY)
  * [Видеопрезентация ко 2 аттестации](https://drive.google.com/file/d/1DA2Q2GM9w3apkwfgrMkE_NA7CSiLwzlK/view?usp=sharing)
  * [Демонстрация работы приложения](https://youtu.be/j7KzPfaEAOs)
+ * [Видео пользовательских сценариев](https://www.youtube.com/watch?v=tfhm-vOYopI&ab_channel=%D0%95%D0%B3%D0%BE%D1%80%D0%A0%D0%BE%D0%B3%D0%B0%D1%87%D0%B5%D0%B2).
 
 ## APK
 [APK](https://github.com/vasiaplaton/TripShare/blob/main/TripShare.apk)
@@ -30,5 +31,3 @@
 
 ### Презентация проекта
  * [Презентация](https://github.com/vasiaplaton/TripShare/blob/main/Presentation3/Final.pdf)
- * [Видео пользовательских сценариев](https://www.youtube.com/watch?v=tfhm-vOYopI&ab_channel=%D0%95%D0%B3%D0%BE%D1%80%D0%A0%D0%BE%D0%B3%D0%B0%D1%87%D0%B5%D0%B2).
-
