@@ -13,15 +13,18 @@
 ### Документация:
  * Техническое задание [Docx](https://github.com/vasiaplaton/TripShare/blob/main/Documentation/Tekhnicheskoe_Zadanie_TripShare.docx) [Pdf](https://github.com/vasiaplaton/TripShare/blob/main/Documentation/Tekhnicheskoe_Zadanie_TripShare.pdf)
  * Сопроводительное письмо [Docx](https://github.com/vasiaplaton/TripShare/blob/main/Documentation/Letter.docx) [Pdf](https://github.com/vasiaplaton/TripShare/blob/main/Documentation/Letter.pdf)
+ * Курсовая [Docx](https://github.com/vasiaplaton/TripShare/blob/main/Documentation/New2/Kursovaya_rabota_final.docx) [Pdf](https://github.com/vasiaplaton/TripShare/blob/main/Documentation/New2/Kursovaya_rabota_final.pdf)
 
 ### Презентация проекта
  * [Презентация](https://github.com/vasiaplaton/TripShare/blob/main/Presentation/Presentation.pdf)
- * [Видео](https://www.youtube.com/watch?v=IuMxdXlnphY)
+ * [Видео к 1 аттестации](https://www.youtube.com/watch?v=IuMxdXlnphY)
  * [Видеопрезентация ко 2 аттестации](https://drive.google.com/file/d/1DA2Q2GM9w3apkwfgrMkE_NA7CSiLwzlK/view?usp=sharing)
  * [Демонстрация работы приложения](https://youtu.be/j7KzPfaEAOs)
 
 ## Видео о структуре
  * [Бэкенд](https://youtu.be/1VoH4M3xit4)
+ * [Фронтенд]([https://youtu.be/1VoH4M3xit4](https://www.youtube.com/watch?v=HiGrKUflbYI))
 
 ### Презентация проекта
  * [Презентация](https://github.com/vasiaplaton/TripShare/blob/main/Presentation3/Final.pdf)
+
