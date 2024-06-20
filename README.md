@@ -22,3 +22,6 @@
 
 ## Видео о структуре
  * [Бэкенд](https://youtu.be/1VoH4M3xit4)
+
+### Презентация проекта
+ * [Презентация](https://github.com/vasiaplaton/TripShare/blob/main/Presentation3/Final.pdf)
